@@ -2,18 +2,38 @@
   var generateBtn = document.querySelector("#generate");
   
    // Created a function to for the options the user will be able to choose from to design their generated password.
+   // Added console.logs to check the progression of the password creation
   function options() {
+    var choices = {};
     var lowerCasedOption = window.confirm("Do you want lowercased letters in your generated password?")
-  
+      if (lowerCasedOption) {
+        choices.lower = lowerCasedOption;
+        console.log(choices);
+      } else {
+        console.log("Password will not contain any lowercased letters!")
+      }
     var upperCasedOption = window.confirm("Do you want uppercased letters in your generated password?")
-  
+      if (upperCasedOption) {
+        choices.upper = upperCasedOption;
+        console.log(choices);
+      } else {
+        console.log("Password will not contain any uppercased letters!")
+      }
     var numericalOption = window.confirm("Do you want numbers in your generated password?")
-  
+      if (numericalOption) {
+        choices.numbers = numericalOption;
+        console.log(choices);
+      } else {
+        console.log("Password will not contain any numbers!")
+      }
     var specialCharactersOption = window.confirm("Do you want special characters in your generated password?")
-  
+      if (specialCharactersOption) {
+        choices.special = specialCharactersOption;
+        console.log(choices);
+      } else {
+        console.log("Password will not contain any special characters!")
+      }
     // Created an object to hold all the keywords with the value's to the answer of the questions. This object will be used for creating the final password.
-    var choices = { lower: lowerCasedOption, upper: upperCasedOption, numbers: numericalOption, special: specialCharactersOption };
-    console.log(choices);
     
     // If user does not agree to any of the above choices, then it will call the function again until doing so.
     if ((!lowerCasedOption) && (!upperCasedOption) && (!numericalOption) && (!specialCharactersOption)) {
@@ -51,42 +71,53 @@
     var chosenOptions = options();
 
     // Succession if statements to execute a for...of statement if the condition is met and loop through every value of the iterable object and then add them to the creatingPassword variable through the .push method with i as its value.
-    if (chosenOptions.lowerCasedOption) {
+    if (chosenOptions.lower) {
         for (var i of lowerCased) {
           creatingPassword.push(i);
+          console.log(creatingPassword);
         }
     }
 
-    if (chosenOptions.upperCasedOption) {
+    if (chosenOptions.upper) {
       for (var i of upperCased) {
         creatingPassword.push(i);
       }
     }
 
-    if (chosenOptions.numericalOption) {
+    if (chosenOptions.numbers) {
       for (var i of numerical) {
         creatingPassword.push(i);
       }
     }
 
-    if (chosenOptions.specialCharactersOption) {
+    if (chosenOptions.special) {
       for (var i of specialCharacters) {
         creatingPassword.push(i);
       }
     }
+    chosenOptions['length'] = passwordLength;
+    console.log(creatingPassword);
 
 
+    for (var i = 0; i < passwordLength; i++) {
+    console.log(creatingPassword);
+    finalPassword += creatingPassword[Math.floor(Math.random() * creatingPassword.length)];
+    // return finalPassword;    I previously put return right here and it would return my value after one iteration. So make sure you dont do that!
+  }
+  console.log(finalPassword)
+  return finalPassword;
 }
 
 
-
+// Added console.logs to make sure the process runs smoothly
 // Write password to the #password input
     function writePassword() {
-    var password = generatePassword() ;
+    var password = generatePassword();
+    console.log(password);
     var passwordText = document.querySelector("#password");
 
     passwordText.value = password;
-
+    console.log(passwordText);
 }
 
   // Add event listener to generate button
@@ -95,6 +126,8 @@
 
 
 
+  // var choices = { lower: lowerCasedOption, upper: upperCasedOption, numbers: numericalOption, special: specialCharactersOption };
+  //  console.log(choices);
 
 
 
