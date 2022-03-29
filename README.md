@@ -9,7 +9,7 @@ The purpose of this game is to simulate how to randomly create a password for a 
 The following image shows a demonstration of what the finished web application's presentation and functionality will include:
 
 
-![The Password-Generator web page includes generate password container with a text box for the password and a button to start the program.](./assets/images/Password-Generator-Image.png)
+![The Password-Generator web page includes a generate password container with a text box for the password and a button to start the program.](./assets/images/Password-Generator-Image.png)
 
 ## Prerequisites
 
@@ -18,6 +18,7 @@ Before you continue, make sure you have the following requirements:
 - You have Visual Studio Code downloaded.
 - You are using a MAC OS or Windows machine.
 - You have a basic understanding of HTML and CSS.
+- You have a basic understanding of JavaScript.
 
 ## Links
 

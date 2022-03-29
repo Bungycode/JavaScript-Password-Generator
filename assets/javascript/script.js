@@ -1,38 +1,38 @@
   // Assignment Code. Copy and Pasted below at the bottom
-  var generateBtn = document.querySelector("#generate");
-  
+    var generateBtn = document.querySelector("#generate");
+
    // Created a function to for the options the user will be able to choose from to design their generated password.
    // Added console.logs to check the progression of the password creation
-  function options() {
-      var choices = {};
-      var lowerCasedOption = window.confirm("Do you want lowercased letters in your generated password?")
-      if (lowerCasedOption) {
-          choices.lower = lowerCasedOption;
-          console.log(choices);
-      } else {
-          console.log("Password will not contain any lowercased letters!")
-      }
-    var upperCasedOption = window.confirm("Do you want uppercased letters in your generated password?")
-      if (upperCasedOption) {
-          choices.upper = upperCasedOption;
-          console.log(choices);
-      } else {
-          console.log("Password will not contain any uppercased letters!")
-      }
-    var numericalOption = window.confirm("Do you want numbers in your generated password?")
-      if (numericalOption) {
-          choices.numbers = numericalOption;
-          console.log(choices);
-      } else {
-          console.log("Password will not contain any numbers!")
-      }
-    var specialCharactersOption = window.confirm("Do you want special characters in your generated password?")
-      if (specialCharactersOption) {
-          choices.special = specialCharactersOption;
-          console.log(choices);
-      } else {
-          console.log("Password will not contain any special characters!")
-      }
+    function options() {
+        var choices = {};
+        var lowerCasedOption = window.confirm("Do you want lowercased letters in your generated password?")
+        if (lowerCasedOption) {
+            choices.lower = lowerCasedOption;
+            console.log(choices);
+        } else {
+            console.log("Password will not contain any lowercased letters!")
+        }
+        var upperCasedOption = window.confirm("Do you want uppercased letters in your generated password?")
+        if (upperCasedOption) {
+            choices.upper = upperCasedOption;
+            console.log(choices);
+        } else {
+            console.log("Password will not contain any uppercased letters!")
+        }
+        var numericalOption = window.confirm("Do you want numbers in your generated password?")
+        if (numericalOption) {
+            choices.numbers = numericalOption;
+            console.log(choices);
+        } else {
+            console.log("Password will not contain any numbers!")
+        }
+        var specialCharactersOption = window.confirm("Do you want special characters in your generated password?")
+        if (specialCharactersOption) {
+            choices.special = specialCharactersOption;
+            console.log(choices);
+        } else {
+            console.log("Password will not contain any special characters!")
+        }
 
     // If user does not agree to any of the above choices, then it will call the function again until doing so.
     if ((!lowerCasedOption) && (!upperCasedOption) && (!numericalOption) && (!specialCharactersOption)) {
@@ -41,10 +41,10 @@
     }
     return choices;
 
-  }
+}
 
   // Declared local variables for characters and password progression.
-  function generatePassword() {
+function generatePassword() {
     var lowerCased = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
     var upperCased = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
     var numerical = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
@@ -72,7 +72,7 @@
 
     // Program will end if the user did not select a type of character to be used in the password
     if (!chosenOptions) {
-      console.log("Program ending because none of the options were selected");  
+        console.log("Program ending because none of the options were selected");  
         alert("You must choose OK to one of the options to generate a random password... ending program.");
         return;
     }
